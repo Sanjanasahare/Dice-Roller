@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice-roller</title>
+    <style>
+        body{
+            background-color: rgb(143, 185, 229);
+        }
+        .container{
+            width: 300px;
+            margin: 0 auto;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgb(0,0,0,0.5);
+            background-color: white;
+            padding: 20px;
+        }
+        .dice{
+            height: 150px;
+            display: block;
+            margin: 20px auto;
+        }
+        .btn-roll{
+            display: block;
+            margin: 30px auto;
+            padding: 10px 30px;
+            font-size: 18px;
+            background-color: rgb(15, 15, 37);
+            color: white;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="dice-1.png" alt="dice" id="dice" class="dice" >
+        <button type="button" class="btn-roll" onclick="rollDice()">
+            Roll the Dice
+        </button>
+
+    </div>
+    
+    <script>
+     function rollDice(){
+        const min =1;
+        const max =7;
+        const num = Math.floor(Math.random() * (max-min) + min);
+       
+         const diceElement = document.getElementById('dice');
+        switch(num){
+            case 1: diceElement.src='dice-1.png';
+            break;
+            case 2: diceElement.src='dice-2.png';
+            break;
+            case 3:diceElement.src='dice-3.png';
+            break;
+            case 4:diceElement.src='dice-4.png';
+            break;
+            case 5:diceElement.src='dice-5.png';
+            break;
+            case 6: diceElement.src='dice-6.png';
+            break;
+        }    
+
+     }
+    </script>
+</body>
+</html>
